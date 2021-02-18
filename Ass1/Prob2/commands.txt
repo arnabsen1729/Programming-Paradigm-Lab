@@ -1,0 +1,9 @@
+# compile multiple source files
+gcc server.c client.c -o client
+
+# static library of server
+gcc -c server.c # compilation without linking
+ar -rc libserver.a server.o # creating static library using archiving
+
+# finally linking the static library
+gcc client.c -L. -lserver -o client-static
