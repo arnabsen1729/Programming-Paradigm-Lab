@@ -58,7 +58,10 @@ int main() {
     cout << "\n\nUSING FILE I/O\n\n";
 
     // using file
+
     int students_file_count = 2;
+
+    // creating a instream file object
     ifstream fileIn;
     fileIn.open("inFile.txt");
     Student* students_array2 = new Student[students_file_count];
@@ -66,6 +69,7 @@ int main() {
         students_array2[index] = ReadStudentData(fileIn);
     }
 
+    // creating a outstream file object
     ofstream fileOut;
     fileOut.open("outFile.txt");
 
