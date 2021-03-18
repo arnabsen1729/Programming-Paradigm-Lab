@@ -15,11 +15,11 @@ struct Node {
 };
 
 void intSwap() {
+    cout << "\n";
     cout << "Swapping int:\n";
-    cout << "Enter values:\n";
+    cout << "-------------\n";
     int a;
     int b;
-    cin >> a >> b;
 
     cout << "Before Swap:\n";
     cout << "Value of a: \n";
@@ -33,11 +33,11 @@ void intSwap() {
 }
 
 void shortSwap() {
+    cout << "\n";
     cout << "Swapping short:\n";
-    cout << "Enter values:\n";
+    cout << "-------------\n";
     short int a;
     short int b;
-    cin >> a >> b;
     cout << "Before Swap:\n";
     cout << "Value of a: \n";
     cin >> a;
@@ -50,11 +50,11 @@ void shortSwap() {
 }
 
 void floatSwap() {
+    cout << "\n";
     cout << "Swapping float:\n";
-    cout << "Enter values:\n";
+    cout << "-------------\n";
     float a;
     float b;
-    cin >> a >> b;
     cout << "Before Swap:\n";
     cout << "Value of a: \n";
     cin >> a;
@@ -67,11 +67,11 @@ void floatSwap() {
 }
 
 void doubleSwap() {
+    cout << "\n";
     cout << "Swapping double:\n";
-    cout << "Enter values:\n";
+    cout << "-------------\n";
     double a;
     double b;
-    cin >> a >> b;
     cout << "Before Swap:\n";
     cout << "Value of a: \n";
     cin >> a;
@@ -88,10 +88,10 @@ void structSwap() {
     cout << "Enter values (int, char): \n";
     Node a;
     Node b;
-    cin >> a.x >> a.y;
-    cin >> b.x >> b.y;
     cout << "Before Swap:\n";
+    cin >> a.x >> a.y;
     cout << "Value of a: " << a.x << " " << a.y << "\n";
+    cin >> b.x >> b.y;
     cout << "Value of b: " << b.x << " " << b.y << "\n";
     mySwap(a, b);
     cout << "After Swap:\n";

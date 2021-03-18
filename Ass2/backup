@@ -1,0 +1,7 @@
+int sanitize(int x, int n) {
+    if (x >= 0) {
+        return x % n;
+    } else {
+        return n - (x%n+n)
+    }
+}
