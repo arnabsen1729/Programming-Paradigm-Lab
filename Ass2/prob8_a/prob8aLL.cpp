@@ -1,4 +1,4 @@
-#include "linkedList.h"
+#include "prob8aLL.h"
 using namespace std;
 
 node *circularLLInit(int size) {
@@ -61,32 +61,11 @@ node *findNElementCircularLL(node *ptr, int count) {
     return itr;
 }
 
-int polynomialFn(int opt, int x) {
-    switch (opt) {
-        case 1:
-            return (x * x * x + 8 * x * x + 9 * x + 10);
-        case 2:
-            return (x * x * x + 6 * x * x + 4 * x + 14);
-        case 3:
-            return (2 * x * x * x + 8 * x * x + 8 * x + 1);
-        case 4:
-            return (3 * x * x * x + 17 * x * x + 22 * x + 10);
-        default:
-            return 0;
-    }
-}
-
-int sanitize(int x, int n) {
-    if (x >= 0) {
-        return x % n;
-    } else {
-        return n - (x % n + n);
-    }
-}
+int calculateFunction(int x) { return (x * x * x + 8 * x * x - 2 * x + 1); }
 
 node *findWinnerGame(node *ptr, int num) {
     while (!isSingleElementLL(ptr)) {
-        int skipCount = polynomialFn(rand() % 4 + 1, rand() % num) % num;
+        int skipCount = calculateFunction(rand() % num) % num;
         node *sNode = findNElementCircularLL(ptr, skipCount);
         ptr = sNode->next->next;
         deleteNextCircularLL(sNode);
