@@ -10,12 +10,15 @@ class RSArray {
     int *data;
 
    public:
+    static int count;
     RSArray() {
         length = 0;
         maxLength = 0;
         populatedIndex = -1;
         defaultValue = 0;
         data = nullptr;
+
+        count++;
     }
     RSArray(int len, int def, int maxl) {
         maxLength = maxl;
@@ -26,6 +29,8 @@ class RSArray {
         for (int i = 0; i < length; i++) {
             data[i] = defaultValue;
         }
+
+        count++;
     }
 
     RSArray(RSArray &array) {
@@ -36,6 +41,8 @@ class RSArray {
         for (int i = 0; i < length; i++) {
             data[i] = array.data[i];
         }
+
+        count++;
     }
 
     RSArray &operator=(const RSArray &t);
@@ -116,7 +123,6 @@ int RSArray::fetchElem() {
 
 void RSArray::resetElements() {
     for (int i = 0; i <= populatedIndex; i++) data[i] = defaultValue;
-	populatedIndex=-1;
 }
 
 void RSArray::getMaxSize() { cout << "Max Length: " << maxLength << "\n"; }
@@ -145,6 +151,8 @@ void displayOptions() {
     cout << "\nChoice: ";
 }
 
+int RSArray::count = 0;
+
 int main() {
     int len, def, maxL;
     cout << "Enter length: ";
@@ -155,6 +163,7 @@ int main() {
     cin >> maxL;
 
     RSArray obj(len, def, maxL);
+    cout << RSArray::count << "\n\n\n";
     while (1) {
         displayOptions();
         RSArray temp;

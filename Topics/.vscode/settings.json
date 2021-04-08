@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.erb": "erb",
+    "array": "cpp",
+    "string": "cpp",
+    "string_view": "cpp"
+  }
+}
